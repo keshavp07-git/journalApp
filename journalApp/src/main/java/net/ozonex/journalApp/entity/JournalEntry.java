@@ -1,14 +1,31 @@
 package net.ozonex.journalApp.entity;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import javax.xml.crypto.Data;
+
+@Document(collection = "journal_entries")
 public class JournalEntry {
-    private long id;
+    @Id
+    private String id;
     private String title;
 
-    public long getId() {
+    public Data getDate() {
+        return date;
+    }
+
+    public void setDate(Data date) {
+        this.date = date;
+    }
+
+    private Data date ;
+
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
